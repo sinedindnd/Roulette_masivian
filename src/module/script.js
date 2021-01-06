@@ -1,6 +1,21 @@
 
 const division = document.querySelector(".container");
+let btn = document.getElementById('open');
 let content = ``;
+
+btn.onclick = function()
+{
+  if(btn.classList.contains('neon'))
+  {
+    btn.classList.remove('neon');
+    btn.innerHTML = "closed bets";
+  }
+  else
+  {
+    btn.classList.add('neon');
+    btn.innerHTML = "open bets";
+  }
+}
 
 for(i = 0; i <= 36; i++ )
 {
@@ -31,15 +46,13 @@ division.innerHTML = content;
 
 const btn_close_bets = document.querySelector(".close_bets");
 const inputs = document.querySelectorAll("input");
-// console.log("btn: ", btn_close_bets);
-// console.log("input: ", inputs);
 function eventFlow(e)
 {
   if(e.target.className === 'new')
   {
     const url = "http://localhost:3000/api/roulette";
 
-    fetch(url, {
+    // fetch(url, {
       // method: 'POST',
       // headers: {
       //   'Content-type': 'application/json'
@@ -48,11 +61,11 @@ function eventFlow(e)
       //   "name": "test three"
       // }
 
-    })
-    .then(resp => resp.json())
-    .then(data => {
-      console.log("data: ",data);
-    })
+    // })
+    // .then(resp => resp.json())
+    // .then(data => {
+    //   console.log("data: ",data);
+    // })
     
   }else if(e.target.className === 'open')
   {
