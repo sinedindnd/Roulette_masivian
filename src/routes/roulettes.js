@@ -5,13 +5,14 @@ const _ = require('underscore');
 const roulette = require("./roulette.json");
 const bets = require('./bets.json');
 const users = require('./users.json');
-
-function deleteBet(params) {
-  
-}
+const { default: fetch } = require('node-fetch');
 
 router.get('/', (req, res) => {
   res.json(roulette);
+});
+
+router.get('/getBets', (req, res) => {
+  res.json(bets);
 });
 
 router.post('/', (req, res) => {
@@ -49,6 +50,34 @@ router.post('/', (req, res) => {
   else
   {
     res.status(500).json({error: "Wrong Request!!! I failed to open bets on roulette."});
+  }
+});
+
+router.post('/close', async (req, res) => {
+  const {id_roulette} = req.body;
+  const response = await fetch('http://localhost:3000/api/roulette/getBets');
+  const users = await response.json();
+  if(Number(id_roulette))
+  {
+    roulette.forEach((e, i) => {
+    if(e.id === id_roulette)
+      {
+        if(e.state == "open")
+        {
+          e.state = "close";
+        }
+      }
+    });
+    const winner_number = Math.floor(Math.random()*(36))+1;
+    if(winner_number >= 0 && winner_number <= 36)
+    {
+      color = winner_number % 2 === 0? 'rojo': 'negro';
+    }
+    res.json({winner_number: winner_number,color:color,respose: users});
+  }
+  else
+  {
+    res.status(500).json({error: "Wrong Request!!! invalid id."});
   }
 });
 

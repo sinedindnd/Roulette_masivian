@@ -15,6 +15,7 @@ app.use(express.json());
 app.use('/api/home', require('./routes/home'));
 
 app.use('/api/roulette',require("./routes/roulettes"));
+app.use('/api/roulette',require("./routes/roulettes"));
 app.use('/api/newroulette',require("./routes/roulettes"));
 app.use('/api/openroulette',require("./routes/roulettes"));
 app.use('/api/savebetsroulette', require('./routes/roulettes'));
