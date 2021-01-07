@@ -19,7 +19,7 @@
   },
   {
     "id_user": "004",
-    "credit": "40000",
+    "credit": "10000",
     "name_user": "Freddy Moore",
     "edad": 56
   },
@@ -37,7 +37,7 @@
   },
   {
     "id_user": "007",
-    "credit": "1190000",
+    "credit": "3000",
     "name_user": "Marsha Mandzuka",
     "edad": 44
   }
