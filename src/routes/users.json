@@ -6,37 +6,37 @@
     "edad": 36
   },
   {
-    "id_user": "001",
-    "credit": "90000",
-    "name_user": "Ashton Kutcher",
-    "edad": 36
-  },
-  {
-    "id_user": "001",
-    "credit": "90000",
-    "name_user": "Ashton Kutcher",
-    "edad": 36
-  },
-  {
     "id_user": "002",
+    "credit": "190000",
+    "name_user": "Ashton Kutcher",
+    "edad": 36
+  },
+  {
+    "id_user": "003",
+    "credit": "12000",
+    "name_user": "Ashton Kutcher",
+    "edad": 36
+  },
+  {
+    "id_user": "004",
     "credit": "40000",
     "name_user": "Freddy Moore",
     "edad": 56
   },
   {
-    "id_user": "003",
+    "id_user": "005",
     "credit": "1290000",
     "name_user": "Bruce Willis",
     "edad": 60
   },
   {
-    "id_user": "004",
-    "credit": "90000",
+    "id_user": "006",
+    "credit": "10000",
     "name_user": "Emilio Estévez",
     "edad": 66
   },
   {
-    "id_user": "005",
+    "id_user": "007",
     "credit": "1190000",
     "name_user": "Marsha Mandzuka",
     "edad": 44

@@ -3,7 +3,7 @@
   "id_roulette": "1",
   "id_user": "001",
   "bet_value": "0",
-  "color": true,
+  "color": "rojo",
   "number": 36,
   "type_of_currency": "usd"
   },
@@ -11,7 +11,7 @@
   "id_roulette": "1",
   "id_user": "002",
   "bet_value": "9999",
-  "color": true,
+  "color": "negro",
   "number": "",
   "type_of_currency": "usd"
   },
@@ -19,32 +19,32 @@
   "id_roulette": "1",
   "id_user": "003",
   "bet_value": "15000",
-  "color": true,
+  "color": "negro",
   "number": 9,
   "type_of_currency": "usd"
   },
   {
   "id_roulette": "1",
   "id_user": "004",
-  "bet_value": "10000",
-  "color": true,
-  "number": 9,
+  "bet_value": "100000",
+  "color": "negro",
+  "number": 19,
   "type_of_currency": "usd"
   },
   {
   "id_roulette": "2",
   "id_user": "004",
-  "bet_value": "10000",
-  "color": true,
+  "bet_value": "150000",
+  "color": "negro",
   "number": 37,
   "type_of_currency": "usd"
   },
   {
   "id_roulette": "3",
   "id_user": "004",
-  "bet_value": "10000",
-  "color": true,
-  "number": 37,
+  "bet_value": "12000",
+  "color": "rojo",
+  "number": 30,
   "type_of_currency": "usd"
   }
 ]
