@@ -57,6 +57,7 @@ router.post('/close', async (req, res) => {
   const {id_roulette} = req.body;
   const response = await fetch('http://localhost:3000/api/roulette/getBets');
   const users = await response.json();
+  let data = {}, count = 0, money_gain = 0;
   if(Number(id_roulette))
   {
     roulette.forEach((e, i) => {
@@ -71,9 +72,39 @@ router.post('/close', async (req, res) => {
     const winner_number = Math.floor(Math.random()*(36))+1;
     if(winner_number >= 0 && winner_number <= 36)
     {
-      color = winner_number % 2 === 0? 'rojo': 'negro';
+      winner_color = winner_number % 2 === 0? 'rojo': 'negro';
     }
-    res.json({winner_number: winner_number,color:color,respose: users});
+    bets.forEach(e => 
+    {
+      if(e.number === winner_number && parseInt(e.id_roulette) === id_roulette)
+      {
+        count = 1;
+        data =
+        {
+          "id_user": e.id_user,
+          "bet_value": e.bet_value,
+          "number": e.number,
+          "color": e.color,
+          "bet_on": e.bet_on
+        }
+      }
+    });
+    if(count)
+    {
+      if(data.bet_on.color)
+      {
+        money_gain = data.bet_value * 1.8
+      }
+      if(data.bet_on.valor)
+      {
+        money_gain += data.bet_value * 5;
+      }
+      res.json({winner_number: winner_number,winner_color:winner_color,winner: count,money_gain: money_gain,data: data});
+    }
+    else
+    {
+      res.json({winner_number: winner_number,winner_color:winner_color,winners: count,msm: "ronda sin ganadores."});
+    }
   }
   else
   {
