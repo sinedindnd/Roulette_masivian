@@ -1,0 +1,185 @@
+{
+	"info": {
+		"_postman_id": "69cf16e2-b151-4855-9709-2cf52e6fea08",
+		"name": "postman-Roulette",
+		"description": "peticiones realizadas para cada endpoint propuesta en el ejercicio.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "reason_conflic",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id_roulette\":  1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/roulette/close",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"roulette",
+						"close"
+					]
+				},
+				"description": "creacion de la nueva ruleta"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/roulette",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/roulette",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"roulette"
+					]
+				},
+				"description": "validacion del objeto con los datos de las ruletas en el archivo roulette.json"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/openroulette",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 3\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/openroulette",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"openroulette"
+					]
+				},
+				"description": "endpoint de apertura de ruletas con el numero de id y cambio de estado a open."
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/savebetsroulette",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n    \"bet_status\": true,\n    \"id_user\": \"001\",\n    \"bet_value\": \"0\",\n    \"color\": \"rojo\",\n    \"number\": 36,\n    \"type_of_currency\": \"usd\"\n    },\n    {\n    \"bet_status\": true,\n    \"id_user\": \"002\",\n    \"bet_value\": \"9999\",\n    \"color\": \"negro\",\n    \"number\": 1,\n    \"type_of_currency\": \"usd\"\n    },\n    {\n    \"bet_status\": true,\n    \"id_user\": \"003\",\n    \"bet_value\": \"15000\",\n    \"color\": \"rojo\",\n    \"number\": 9,\n    \"type_of_currency\": \"usd\"\n    },\n    {\n    \"bet_status\": true,\n    \"id_user\": \"004\",\n    \"bet_value\": \"10000\",\n    \"color\": \"negro\",\n    \"number\": 17,\n    \"type_of_currency\": \"usd\"\n    },\n    {\n    \"bet_status\": true,\n    \"id_user\": \"006\",\n    \"bet_value\": \"10000\",\n    \"color\": \"negro\",\n    \"number\": 37,\n    \"type_of_currency\": \"usd\"\n    },\n    {\n    \"bet_status\": true,\n    \"id_user\": \"015\",\n    \"bet_value\": \"10000\",\n    \"color\": \"negro\",\n    \"number\": 33,\n    \"type_of_currency\": \"usd\"\n    }\n]"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/savebetsroulette/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"savebetsroulette",
+						"1"
+					]
+				},
+				"description": "endpoint 3 para salvar y validar las apuesta de una mesa o roulette"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/savebetsroulette",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\n{\n    \"id_roulette\": 1\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/roulette/close",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"roulette",
+						"close"
+					]
+				},
+				"description": "endpoint four roulette close"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/roulette",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/roulette/getBets",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"roulette",
+						"getBets"
+					]
+				},
+				"description": "obtener arreglo de apuesta"
+			},
+			"response": []
+		}
+	]
+}
